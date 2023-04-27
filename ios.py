@@ -10,7 +10,7 @@ desired_caps = {
     "platformName": "ios",
     "platformVersion": "14",
     "isRealMobile": True,
-#     "app": "lt://APP1016045801682625011121663",  # Enter app_url here
+    "app": "lt://APP1016045801682625011121663",  # Enter app_url here
     "build": "Python Vanilla iOS",
     "name": "Sample Test - Python",
     "network": False,
