@@ -10,7 +10,7 @@ desired_caps = {
     "platformName": "ios",
     "platformVersion": "14",
     "isRealMobile": True,
-    "app": "lt://APP1016045801682625011121663",  # Enter app_url here
+#     "app": "lt://APP1016045801682625011121663",  # Enter app_url here
     "build": "Python Vanilla iOS",
     "name": "Sample Test - Python",
     "network": False,
@@ -34,6 +34,8 @@ def startingTest():
     try:
         driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
                                   username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
+        
+        print("DesiredCapabilities---",desired_caps);
         
         
         time.sleep(3)
@@ -74,7 +76,7 @@ def startingTest():
         find.click()
         driver.quit()
     except:
-        print("DesiredCapabilities---",desired_caps);
+        
         driver.quit()
 
 
