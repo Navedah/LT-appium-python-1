@@ -34,7 +34,7 @@ def startingTest():
     try:
         driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
                                   username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
-        print("DesiredCapabilities---",desired_caps);
+        
         
         time.sleep(3)
         colorElement = WebDriverWait(driver, 20).until(
@@ -74,6 +74,7 @@ def startingTest():
         find.click()
         driver.quit()
     except:
+        print("DesiredCapabilities---",desired_caps);
         driver.quit()
 
 
