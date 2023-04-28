@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
- desired_caps = {
+desired_caps = {
 #     "deviceName": "iPhone 12",
 #     "platformName": "ios",
 #     "platformVersion": "14",
@@ -35,7 +35,7 @@ import os
             "visual": True,
             "video": True
         }
- }
+}
 
 def startingTest():
     if os.environ.get("LT_USERNAME") is None:
