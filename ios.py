@@ -5,19 +5,37 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
-desired_caps = {
-    "deviceName": "iPhone 12",
-    "platformName": "ios",
-    "platformVersion": "14",
-    "isRealMobile": True,
-    "app": "lt://APP1016045801682625011121663",  # Enter app_url here
-    "build": "Python Vanilla iOS",
-    "name": "Sample Test - Python",
-    "network": False,
-    "visual": True,
-    "video": True
-}
+ desired_caps = {
+#     "deviceName": "iPhone 12",
+#     "platformName": "ios",
+#     "platformVersion": "14",
+#     "isRealMobile": True,
+#     "app": "lt://APP1016045801682625011121663",  # Enter app_url here
+#     "build": "Python Vanilla iOS",
+#     "name": "Sample Test - Python",
+#     "network": False,
+#     "visual": True,
+#     "video": True
+# }
 
+    "lt:options": {
+            "deviceName": "iPhone 8",
+            "platformName": "ios",
+            "platformVersion": "13",
+            "isRealMobile": True,
+            "deviceOrientation": "portrait",
+            "app": "lt://APP1016045801682625011121663",  # Enter app_url here
+            "build": "Python Vanilla iOS",
+            "name": "Sample Test - Python",
+            "network": True,
+            "console": True,
+            "noReset": False,
+            "w3c": True,
+            "nativeWebScreenshot": True,
+            "visual": True,
+            "video": True
+        }
+ }
 
 def startingTest():
     if os.environ.get("LT_USERNAME") is None:
@@ -34,9 +52,7 @@ def startingTest():
     try:
         driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
                                   username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
-        
-        print("DesiredCapabilities---",desired_caps);
-        
+          
         
         time.sleep(3)
         colorElement = WebDriverWait(driver, 20).until(
